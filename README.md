@@ -1,6 +1,7 @@
 # oech
 
-A new Flutter project.
+Img:
+![project](readme_img/simulator_screenshot_9F64228B-B015-4A6B-A0F0-4FC8E676661A.png)
 
 ## Getting Started
 
