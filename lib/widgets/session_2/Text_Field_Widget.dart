@@ -1,23 +1,24 @@
 import 'package:flutter/material.dart';
 
-class TextInputWidget extends StatelessWidget {
+class TextInputWioidet extends StatelessWidget {
   final String textTitle;
   final String hintText;
-  final double textSize;
   final Color textColor;
+  final double textSize;
   final bool is0bstext;
   final TextInputType inputType;
   final TextEditingController controller;
 
-  const TextInputWidget(
-      {super.key,
-      required this.textTitle,
-      required this.hintText,
-      required this.textSize,
-      this.textColor = const Color.fromRGBO(167, 167, 167, 1),
-      this.is0bstext = false,
-      this.inputType = TextInputType.text,
-      required this.controller});
+  const TextInputWioidet({
+    super.key,
+    required this.textTitle,
+    required this.hintText,
+    required this.textSize,
+    this.is0bstext = false,
+    this.inputType = TextInputType.text,
+    required this.controller,
+    this.textColor = const Color.fromRGBO(167, 167, 167, 1),
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -28,50 +29,50 @@ class TextInputWidget extends StatelessWidget {
           child: Column(
             children: [
               SizedBox(
-                width: 346,
+                width: 342,
                 child: Text(
                   textTitle,
                   style: TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.w500,
-                      color: textColor),
+                    color: textColor,
+                    fontSize: 14,
+                    fontWeight: FontWeight.w500,
+                  ),
                 ),
               ),
               const SizedBox(
                 height: 5,
               ),
-              TextFormField(
-                autocorrect: false,
-                obscureText: is0bstext,
-                controller: controller,
-                keyboardType: inputType,
-                cursorColor: textColor,
-                style: TextStyle(
-                  fontSize: 14,
-                  fontWeight: FontWeight.w500,
-                  color: Color.fromRGBO(58, 58, 58, 1),
-                ),
-                decoration: InputDecoration(
-                    contentPadding: EdgeInsets.symmetric(horizontal: 10),
-                    border: InputBorder.none,
-                    fillColor: Colors.transparent,
-                    enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(4),
-                        borderSide: BorderSide(color: textColor, width: 1)),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(4),
-                      borderSide: BorderSide(color: textColor, width: 1),
-                    ),
-                    filled: true,
-                    hintText: hintText,
-                    hintStyle: TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.w500,
-                        color: Color.fromRGBO(207, 207, 207, 1))),
-              )
             ],
           ),
         ),
+        TextFormField(
+          keyboardType: inputType,
+          // cursorHeight: 500,
+          controller: controller,
+          obscureText: is0bstext,
+
+          style: TextStyle(
+              color: Color.fromRGBO(58, 58, 58, 1),
+              fontSize: 14,
+              fontWeight: FontWeight.w500),
+          decoration: InputDecoration(
+            contentPadding: EdgeInsets.symmetric(horizontal: 10),
+            border: InputBorder.none,
+            enabledBorder: OutlineInputBorder(
+                borderSide: BorderSide(color: textColor, width: 1),
+                borderRadius: BorderRadius.circular(4)),
+            focusedBorder: OutlineInputBorder(
+                borderSide: BorderSide(color: textColor, width: 1),
+                borderRadius: BorderRadius.circular(4)),
+            hintText: hintText,
+            hintStyle: TextStyle(
+                color: Color.fromRGBO(207, 207, 207, 1),
+                fontSize: 14,
+                fontWeight: FontWeight.w500),
+            fillColor: Colors.transparent,
+            filled: true,
+          ),
+        )
       ],
     );
   }

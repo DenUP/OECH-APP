@@ -23,11 +23,11 @@ class _HomePageState extends State<HomePage> {
         padding: const EdgeInsets.symmetric(horizontal: 24),
         child: SingleChildScrollView(
           child: Container(
-            padding: EdgeInsets.zero,
-            // padding: EdgeInsets.only(top: 110, left: 24, right: 24),
+            padding: EdgeInsets.only(top: 110),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 HeaderEmpty(
                   title: 'Welcome Back',
@@ -39,55 +39,94 @@ class _HomePageState extends State<HomePage> {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      'Email Address',
-                      textAlign: TextAlign.start,
-                      style: TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.w500,
-                          color: Color.fromRGBO(167, 167, 167, 1)),
+                    TextInputWioidet(
+                      inputType: TextInputType.text,
+                      controller: TextEditingController(),
+                      textTitle: 'Email Address',
+                      textColor: Color.fromRGBO(167, 167, 167, 1),
+                      textSize: 14,
+                      hintText: '***********@mail.com',
                     ),
                     const SizedBox(
-                      height: 8,
+                      height: 25,
                     ),
-                    TextField(
-                        decoration: InputDecoration(
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(10.0),
-                              borderSide: BorderSide(
-                                color: Color.fromRGBO(207, 207, 207, 1),
-                                width: 1,
-                              ),
-                            ),
-                            focusedBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                    color: Color.fromRGBO(207, 207, 207, 1))),
-                            // labelStyle: TextStyle(
-                            //     color: myFocusNode.hasFocus
-                            //         ? Colors.blue
-                            //         : Colors.yellow),
-                            filled: true,
-                            fillColor: Colors.white,
-                            hintText: 'HintText',
-                            hintStyle: TextStyle(
-                                fontSize: 14,
-                                fontWeight: FontWeight.w500,
-                                color: Color.fromRGBO(207, 207, 207, 1)))),
-                    // TextInputWidget(
-                    //   controller: TextEditingController(),
-                    //   textTitle: 'Full name',
-                    //   textColor: Color.fromRGBO(167, 167, 167, 1),
-                    //   textSize: 14,
-                    //   hintText: 'Ivanov Ivan',
-                    // ),
                     S2TextFieldWidget2(
                       controller: TextEditingController(),
-                      textTitle: 'Full name',
+                      textTitle: 'Password',
                       textTitleColor: Color.fromRGBO(167, 167, 167, 1),
                       textSize: 14,
-                      hintText: 'Ivanov Ivan',
+                      hintText: '**********',
+                      isObsText: true,
                     ),
+                    const SizedBox(
+                      height: 17,
+                    )
                   ],
+                ),
+                Row(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    // Кнопка соглашения
+                    Checkbox(
+                        activeColor: Color.fromRGBO(5, 96, 250, 1),
+                        value: true,
+                        onChanged: (newValue) {
+                          setState(() {
+                            newValue;
+                          });
+                        }),
+                    // Запомнить пароль
+                    const Text(
+                      'Remember password',
+                      style: TextStyle(
+                          color: Color.fromRGBO(167, 167, 167, 1),
+                          fontSize: 12,
+                          fontWeight: FontWeight.w500),
+                    ),
+                    // Забыли пароль
+                    const Spacer(),
+                    InkWell(
+                      onTap: () {
+                        Navigator.pushNamed(context, '/');
+                      },
+                      child: const Text(
+                        'Forgot Password?',
+                        style: TextStyle(
+                            color: Color.fromRGBO(5, 96, 250, 1),
+                            fontSize: 12,
+                            fontWeight: FontWeight.w500),
+                      ),
+                    )
+                  ],
+                ),
+                SizedBox(
+                  height: 187,
+                ),
+                SizedBox(
+                  width: double.infinity,
+                  height: 50,
+                  child: TextButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/onb3');
+                    },
+                    style: ButtonStyle(
+                        backgroundColor: MaterialStatePropertyAll(
+                            Color.fromRGBO(5, 96, 250, 1)),
+                        shape:
+                            MaterialStateProperty.all<RoundedRectangleBorder>(
+                                RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(4.0),
+                        ))),
+                    child: const Text(
+                      'Log in',
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w700,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
                 ),
               ],
             ),
