@@ -5,7 +5,6 @@ class OnBoardginTwo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Scaffold(
       backgroundColor: Colors.white,
       body: Center(
@@ -14,9 +13,6 @@ class OnBoardginTwo extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const SizedBox(
-                height: 88,
-              ),
               Image.asset('assets/image/rafiki.png'),
               const SizedBox(
                 height: 60,
@@ -30,18 +26,18 @@ class OnBoardginTwo extends StatelessWidget {
                     fontWeight: FontWeight.w700),
               ),
               const SizedBox(
-                height: 10,
+                height: 12,
               ),
               const Text(
                 'Different modes of payment either before and after delivery without stress',
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                    color: Color.fromRGBO(58, 58, 58, 1),
+                    color: Color.fromRGBO(96, 96, 96, 1),
                     fontSize: 16,
                     fontWeight: FontWeight.w400),
               ),
               const SizedBox(
-                height: 100,
+                height: 82,
               ),
               Row(
                 children: [
@@ -50,11 +46,11 @@ class OnBoardginTwo extends StatelessWidget {
                     width: 100,
                     child: TextButton(
                       onPressed: () {
-                        Navigator.pushNamed(context, '/hld');
+                        Navigator.pushNamed(context, '/onb1');
                       },
                       style: ButtonStyle(
                           shape: MaterialStateProperty.all(
-                              RoundedRectangleBorder(
+                              BeveledRectangleBorder(
                                   borderRadius: BorderRadius.circular(4),
                                   side: const BorderSide(
                                       color: Color.fromRGBO(5, 96, 250, 1),
@@ -74,11 +70,11 @@ class OnBoardginTwo extends StatelessWidget {
                     width: 100,
                     child: ElevatedButton(
                       onPressed: () {
-                        Navigator.pushNamed(context, '/onb3');
+                        Navigator.pushNamed(context, '/onb2');
                       },
                       style: ElevatedButton.styleFrom(
-                          backgroundColor: const Color.fromRGBO(5, 96, 250, 1),
-                          shape: RoundedRectangleBorder(
+                          backgroundColor: Color.fromRGBO(5, 96, 250, 1),
+                          shape: BeveledRectangleBorder(
                             borderRadius: BorderRadius.circular(4),
                           )),
                       child: const Text(

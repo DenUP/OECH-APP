@@ -1,0 +1,78 @@
+import 'package:flutter/material.dart';
+
+class TextInputWidget extends StatelessWidget {
+  final String textTitle;
+  final String hintText;
+  final double textSize;
+  final Color textColor;
+  final bool is0bstext;
+  final TextInputType inputType;
+  final TextEditingController controller;
+
+  const TextInputWidget(
+      {super.key,
+      required this.textTitle,
+      required this.hintText,
+      required this.textSize,
+      this.textColor = const Color.fromRGBO(167, 167, 167, 1),
+      this.is0bstext = false,
+      this.inputType = TextInputType.text,
+      required this.controller});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Padding(
+          padding: const EdgeInsets.only(top: 10),
+          child: Column(
+            children: [
+              SizedBox(
+                width: 346,
+                child: Text(
+                  textTitle,
+                  style: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w500,
+                      color: textColor),
+                ),
+              ),
+              const SizedBox(
+                height: 5,
+              ),
+              TextFormField(
+                autocorrect: false,
+                obscureText: is0bstext,
+                controller: controller,
+                keyboardType: inputType,
+                cursorColor: textColor,
+                style: TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w500,
+                  color: Color.fromRGBO(58, 58, 58, 1),
+                ),
+                decoration: InputDecoration(
+                    contentPadding: EdgeInsets.symmetric(horizontal: 10),
+                    border: InputBorder.none,
+                    fillColor: Colors.transparent,
+                    enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(4),
+                        borderSide: BorderSide(color: textColor, width: 1)),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(4),
+                      borderSide: BorderSide(color: textColor, width: 1),
+                    ),
+                    filled: true,
+                    hintText: hintText,
+                    hintStyle: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w500,
+                        color: Color.fromRGBO(207, 207, 207, 1))),
+              )
+            ],
+          ),
+        ),
+      ],
+    );
+  }
+}
