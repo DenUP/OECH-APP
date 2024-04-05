@@ -45,6 +45,9 @@ class _BottomNavigationBarExampleState
         title: const Text('BottomNavigationBar Sample'),
       ),
       body: Center(
+
+
+        
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
       bottomNavigationBar: BottomNavigationBar(

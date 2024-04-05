@@ -13,6 +13,25 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final _authTextController = TextEditingController(text: 'admin');
+  final _passwordTextController = TextEditingController(text: 'admin');
+  String? errorText = null;
+
+  void _auth() {
+    final login = _authTextController.text;
+    final password = _passwordTextController.text;
+    if (login == 'admin' && password == 'admin') {
+      setState(() {
+        errorText = null;
+      });
+      Navigator.pushNamed(context, '/profile');
+    } else {
+      setState(() {
+        errorText = 'Не верный логин или пароль';
+      });
+    }
+  }
+
   FocusNode myFocusNode = new FocusNode();
   @override
   Widget build(BuildContext context) {
@@ -41,7 +60,7 @@ class _HomePageState extends State<HomePage> {
                   children: [
                     TextInputWioidet(
                       inputType: TextInputType.text,
-                      controller: TextEditingController(),
+                      controller: _authTextController,
                       textTitle: 'Email Address',
                       textColor: Color.fromRGBO(167, 167, 167, 1),
                       textSize: 14,
@@ -51,7 +70,7 @@ class _HomePageState extends State<HomePage> {
                       height: 25,
                     ),
                     S2TextFieldWidget2(
-                      controller: TextEditingController(),
+                      controller: _passwordTextController,
                       textTitle: 'Password',
                       textTitleColor: Color.fromRGBO(167, 167, 167, 1),
                       textSize: 14,
@@ -63,6 +82,12 @@ class _HomePageState extends State<HomePage> {
                     )
                   ],
                 ),
+                // Окно Ошибки
+                if (errorText != null)
+                  Text(
+                    errorText!,
+                    style: TextStyle(color: Colors.black),
+                  ),
                 Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -87,9 +112,7 @@ class _HomePageState extends State<HomePage> {
                     // Забыли пароль
                     const Spacer(),
                     InkWell(
-                      onTap: () {
-                        Navigator.pushNamed(context, '/');
-                      },
+                      onTap: _auth,
                       child: const Text(
                         'Forgot Password?',
                         style: TextStyle(
@@ -107,9 +130,7 @@ class _HomePageState extends State<HomePage> {
                   width: double.infinity,
                   height: 50,
                   child: TextButton(
-                    onPressed: () {
-                      Navigator.pushNamed(context, '/onb3');
-                    },
+                    onPressed: _auth,
                     style: ButtonStyle(
                         backgroundColor: MaterialStatePropertyAll(
                             Color.fromRGBO(5, 96, 250, 1)),
