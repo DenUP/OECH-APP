@@ -14,8 +14,9 @@ class _ProfileState extends State<Profile> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('dasdsa'),
+      appBar: AppBarDefoult(
+        titleText: 'Profile',
+        button: true,
       ),
       backgroundColor: Colors.white,
     );

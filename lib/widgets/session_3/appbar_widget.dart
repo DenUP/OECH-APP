@@ -1,25 +1,16 @@
 import 'package:flutter/material.dart';
 
-class AppBarDefoult extends StatelessWidget {
+class AppBarDefoult extends StatelessWidget implements PreferredSizeWidget {
+  final bool button;
   final String titleText;
 
-  const AppBarDefoult({super.key, required this.titleText});
+  const AppBarDefoult(
+      {super.key, required this.titleText, required this.button});
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      leading: Builder(
-        builder: (BuildContext context) {
-          return IconButton(
-            icon: const Icon(Icons.arrow_left_outlined),
-            onPressed: () {
-              Scaffold.of(context).openDrawer();
-            },
-            tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
-          );
-        },
-      ),
-
+      automaticallyImplyLeading: button,
       iconTheme: IconThemeData(
         size: 24,
         color: Color.fromRGBO(5, 96, 250, 1),
@@ -36,4 +27,8 @@ class AppBarDefoult extends StatelessWidget {
       centerTitle: true,
     );
   }
+
+  @override
+  // TODO: implement preferredSize
+  Size get preferredSize => Size.fromHeight(100);
 }
