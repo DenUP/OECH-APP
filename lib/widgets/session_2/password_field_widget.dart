@@ -1,25 +1,32 @@
 import 'package:flutter/material.dart';
 import 'package:oech/presentation/style/colors.dart';
 
-class TextInputWioidet extends StatelessWidget {
+class PasswordInputWioidet extends StatefulWidget {
   final String textTitle;
   final String hintText;
   final Color textColor;
   final double textSize;
-  final bool is0bstext;
+  // final bool is0bstext;
   final TextInputType inputType;
   final TextEditingController controller;
 
-  const TextInputWioidet({
+  const PasswordInputWioidet({
     super.key,
     required this.textTitle,
     required this.hintText,
     required this.textSize,
-    this.is0bstext = false,
+    // this.is0bstext = false,
     this.inputType = TextInputType.text,
     required this.controller,
     this.textColor = const Color.fromRGBO(167, 167, 167, 1),
   });
+
+  @override
+  State<PasswordInputWioidet> createState() => _PasswordInputWioidetState();
+}
+
+class _PasswordInputWioidetState extends State<PasswordInputWioidet> {
+  var is0bstext = true;
 
   @override
   Widget build(BuildContext context) {
@@ -32,9 +39,9 @@ class TextInputWioidet extends StatelessWidget {
               SizedBox(
                 width: 342,
                 child: Text(
-                  textTitle,
+                  widget.textTitle,
                   style: TextStyle(
-                    color: textColor,
+                    color: widget.textColor,
                     fontSize: 14,
                     fontWeight: FontWeight.w500,
                   ),
@@ -48,9 +55,9 @@ class TextInputWioidet extends StatelessWidget {
         ),
         TextFormField(
           cursorColor: colors.FieldColors,
-          keyboardType: inputType,
+          keyboardType: widget.inputType,
           // cursorHeight: 500,
-          controller: controller,
+          controller: widget.controller,
           obscureText: is0bstext,
 
           style: const TextStyle(
@@ -58,13 +65,21 @@ class TextInputWioidet extends StatelessWidget {
               fontSize: 14,
               fontWeight: FontWeight.w500),
           decoration: InputDecoration(
+            suffixIcon: InkWell(
+                onTap: () {
+                  is0bstext = !is0bstext;
+                  setState(() {});
+                },
+                child: Icon(
+                  is0bstext ? Icons.visibility_off : Icons.visibility,
+                )),
             contentPadding: const EdgeInsets.symmetric(horizontal: 10),
             border: InputBorder.none,
             enabledBorder: OutlineInputBorder(
-                borderSide: BorderSide(color: textColor, width: 1),
+                borderSide: BorderSide(color: widget.textColor, width: 1),
                 borderRadius: BorderRadius.circular(4)),
             focusedBorder: OutlineInputBorder(
-                borderSide: BorderSide(color: textColor, width: 1),
+                borderSide: BorderSide(color: widget.textColor, width: 1),
                 borderRadius: BorderRadius.circular(4)),
             // errorText: 'fdsfds',
             // focusColor: Colors.red,
@@ -83,7 +98,7 @@ class TextInputWioidet extends StatelessWidget {
                   style: BorderStyle.solid,
                 ),
                 borderRadius: BorderRadius.circular(4)),
-            hintText: hintText,
+            hintText: widget.hintText,
             hintStyle: const TextStyle(
                 color: Color.fromRGBO(207, 207, 207, 1),
                 fontSize: 14,

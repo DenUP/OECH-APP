@@ -4,7 +4,6 @@ import 'package:oech/pages/session_1/onboardgin2.dart';
 import 'package:oech/pages/session_1/splash.dart';
 import 'package:oech/pages/session_3/Profile.dart';
 import 'package:oech/presentation/style/colors.dart';
-import 'package:oech/style/colors.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -19,7 +18,7 @@ class App extends StatelessWidget {
           bottomNavigationBarTheme: const BottomNavigationBarThemeData(
               backgroundColor: Colors.white,
               selectedItemColor: colors.mainColor,
-              unselectedItemColor: Colorss.FieldColors)),
+              unselectedItemColor: colors.name_label)),
       debugShowCheckedModeBanner: false,
       initialRoute: '/',
       routes: {

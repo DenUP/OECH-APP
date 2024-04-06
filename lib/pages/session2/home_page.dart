@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:oech/pages/session2/data/models/HeaderEmpty.dart';
 import 'package:oech/widgets/session_2/Text_Field_Widget.dart';
+import 'package:oech/widgets/session_2/password_field_widget.dart';
 import 'package:oech/widgets/session_2/s2_field.dart';
 
 class HomePage extends StatefulWidget {
@@ -68,13 +69,12 @@ class _HomePageState extends State<HomePage> {
                     const SizedBox(
                       height: 25,
                     ),
-                    S2TextFieldWidget2(
+                    PasswordInputWioidet(
                       controller: _passwordTextController,
                       textTitle: 'Password',
-                      textTitleColor: const Color.fromRGBO(167, 167, 167, 1),
+                      textColor: const Color.fromRGBO(167, 167, 167, 1),
                       textSize: 14,
                       hintText: '**********',
-                      isObsText: true,
                     ),
                     const SizedBox(
                       height: 17,
