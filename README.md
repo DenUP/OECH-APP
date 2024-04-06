@@ -1,7 +1,21 @@
 # oech
 
-Img:
-![project](readme_img/simulator_screenshot_9F64228B-B015-4A6B-A0F0-4FC8E676661A.png)
+#### Demonstrations
+<div style="text-align: center"><table><tr>
+  <td style="text-align: center, width: 180">
+    
+        
+  </td>
+   <td style="text-align: center">
+    <img width="180" alt="Onboarding" src="readme_img/simulator_screenshot_9F64228B-B015-4A6B-A0F0-4FC8E676661A.png">
+  
+    Onboarding
+  </td>
+  
+
+
+</tr></table></div>
+
 
 ## Getting Started
 
