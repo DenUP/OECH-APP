@@ -51,12 +51,12 @@ class TextInputWioidet extends StatelessWidget {
           controller: controller,
           obscureText: is0bstext,
 
-          style: TextStyle(
+          style: const TextStyle(
               color: Color.fromRGBO(58, 58, 58, 1),
               fontSize: 14,
               fontWeight: FontWeight.w500),
           decoration: InputDecoration(
-            contentPadding: EdgeInsets.symmetric(horizontal: 10),
+            contentPadding: const EdgeInsets.symmetric(horizontal: 10),
             border: InputBorder.none,
             enabledBorder: OutlineInputBorder(
                 borderSide: BorderSide(color: textColor, width: 1),
@@ -65,7 +65,7 @@ class TextInputWioidet extends StatelessWidget {
                 borderSide: BorderSide(color: textColor, width: 1),
                 borderRadius: BorderRadius.circular(4)),
             hintText: hintText,
-            hintStyle: TextStyle(
+            hintStyle: const TextStyle(
                 color: Color.fromRGBO(207, 207, 207, 1),
                 fontSize: 14,
                 fontWeight: FontWeight.w500),

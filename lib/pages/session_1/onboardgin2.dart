@@ -73,7 +73,7 @@ class OnBoardginTwo extends StatelessWidget {
                         Navigator.pushNamed(context, '/onb2');
                       },
                       style: ElevatedButton.styleFrom(
-                          backgroundColor: Color.fromRGBO(5, 96, 250, 1),
+                          backgroundColor: const Color.fromRGBO(5, 96, 250, 1),
                           shape: BeveledRectangleBorder(
                             borderRadius: BorderRadius.circular(4),
                           )),

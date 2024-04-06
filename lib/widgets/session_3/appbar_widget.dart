@@ -11,7 +11,7 @@ class AppBarDefoult extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       automaticallyImplyLeading: button,
-      iconTheme: IconThemeData(
+      iconTheme: const IconThemeData(
         size: 24,
         color: Color.fromRGBO(5, 96, 250, 1),
       ),
@@ -19,8 +19,8 @@ class AppBarDefoult extends StatelessWidget implements PreferredSizeWidget {
       // leadingWidth: BorderSide.strokeAlignCenter,
       title: Text(
         titleText,
-        style: TextStyle(
-            color: const Color.fromARGB(255, 133, 124, 124),
+        style: const TextStyle(
+            color: Color.fromARGB(255, 133, 124, 124),
             fontSize: 16,
             fontWeight: FontWeight.w500),
       ),
@@ -30,5 +30,5 @@ class AppBarDefoult extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   // TODO: implement preferredSize
-  Size get preferredSize => Size.fromHeight(100);
+  Size get preferredSize => const Size.fromHeight(100);
 }

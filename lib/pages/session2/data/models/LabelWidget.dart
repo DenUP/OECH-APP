@@ -8,7 +8,7 @@ class LabelWidget extends StatefulWidget {
 }
 
 class _LabelWidgetState extends State<LabelWidget> {
-  FocusNode myFocusNode = new FocusNode();
+  FocusNode myFocusNode = FocusNode();
 
   @override
   Widget build(BuildContext context) {

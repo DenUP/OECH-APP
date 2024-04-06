@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:oech/pages/session2/data/models/HeaderEmpty.dart';
-import 'package:oech/widgets/search_widget.dart';
 import 'package:oech/widgets/session_2/Text_Field_Widget.dart';
 import 'package:oech/widgets/session_2/s2_field.dart';
 
@@ -15,7 +14,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   final _authTextController = TextEditingController(text: 'admin');
   final _passwordTextController = TextEditingController(text: 'admin');
-  String? errorText = null;
+  String? errorText;
 
   void _auth() {
     final login = _authTextController.text;
@@ -32,7 +31,7 @@ class _HomePageState extends State<HomePage> {
     }
   }
 
-  FocusNode myFocusNode = new FocusNode();
+  FocusNode myFocusNode = FocusNode();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,13 +41,13 @@ class _HomePageState extends State<HomePage> {
         padding: const EdgeInsets.symmetric(horizontal: 24),
         child: SingleChildScrollView(
           child: Container(
-            padding: EdgeInsets.only(top: 110),
+            padding: const EdgeInsets.only(top: 110),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                HeaderEmpty(
+                const HeaderEmpty(
                   title: 'Welcome Back',
                   label: 'Fill in your email and password to continue',
                 ),
@@ -62,7 +61,7 @@ class _HomePageState extends State<HomePage> {
                       inputType: TextInputType.text,
                       controller: _authTextController,
                       textTitle: 'Email Address',
-                      textColor: Color.fromRGBO(167, 167, 167, 1),
+                      textColor: const Color.fromRGBO(167, 167, 167, 1),
                       textSize: 14,
                       hintText: '***********@mail.com',
                     ),
@@ -72,7 +71,7 @@ class _HomePageState extends State<HomePage> {
                     S2TextFieldWidget2(
                       controller: _passwordTextController,
                       textTitle: 'Password',
-                      textTitleColor: Color.fromRGBO(167, 167, 167, 1),
+                      textTitleColor: const Color.fromRGBO(167, 167, 167, 1),
                       textSize: 14,
                       hintText: '**********',
                       isObsText: true,
@@ -86,7 +85,7 @@ class _HomePageState extends State<HomePage> {
                 if (errorText != null)
                   Text(
                     errorText!,
-                    style: TextStyle(color: Colors.black),
+                    style: const TextStyle(color: Colors.black),
                   ),
                 Row(
                   mainAxisSize: MainAxisSize.max,
@@ -94,7 +93,7 @@ class _HomePageState extends State<HomePage> {
                   children: [
                     // Кнопка соглашения
                     Checkbox(
-                        activeColor: Color.fromRGBO(5, 96, 250, 1),
+                        activeColor: const Color.fromRGBO(5, 96, 250, 1),
                         value: true,
                         onChanged: (newValue) {
                           setState(() {
@@ -123,7 +122,7 @@ class _HomePageState extends State<HomePage> {
                     )
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 187,
                 ),
                 SizedBox(
@@ -132,7 +131,7 @@ class _HomePageState extends State<HomePage> {
                   child: TextButton(
                     onPressed: _auth,
                     style: ButtonStyle(
-                        backgroundColor: MaterialStatePropertyAll(
+                        backgroundColor: const MaterialStatePropertyAll(
                             Color.fromRGBO(5, 96, 250, 1)),
                         shape:
                             MaterialStateProperty.all<RoundedRectangleBorder>(

@@ -13,7 +13,7 @@ class App extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: '/',
       routes: {
-        '/': (context) => Splash(),
+        '/': (context) => const Splash(),
         '/onb1': (context) => const OnboardingOne(),
         '/onb2': (context) => const OnBoardginTwo(),
         '/profile': (context) => const Profile(),

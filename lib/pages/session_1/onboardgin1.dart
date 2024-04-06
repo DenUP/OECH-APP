@@ -14,7 +14,7 @@ class OnboardingOne extends StatelessWidget {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 Image.asset('assets/image/Thank_you.png'),
                 const SizedBox(height: 50),
                 const Text(
@@ -61,12 +61,12 @@ class OnboardingOne extends StatelessWidget {
                           style: TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.w700,
-                            color: const Color.fromARGB(255, 5, 96, 250),
+                            color: Color.fromARGB(255, 5, 96, 250),
                           ),
                         ),
                       ),
                     ),
-                    Spacer(),
+                    const Spacer(),
                     SizedBox(
                       width: 90,
                       height: 50,

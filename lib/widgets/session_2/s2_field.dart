@@ -19,7 +19,7 @@ class S2TextFieldWidget2 extends StatelessWidget {
     required this.textSize,
     this.isObsText = false,
     this.inputType = TextInputType.text,
-    this.formater = null,
+    this.formater,
   });
 
 //TEXT WIDGET
@@ -56,7 +56,7 @@ class S2TextFieldWidget2 extends StatelessWidget {
           obscureText: isObsText,
           keyboardType: inputType,
           decoration: InputDecoration(
-            contentPadding: EdgeInsets.symmetric(horizontal: 10),
+            contentPadding: const EdgeInsets.symmetric(horizontal: 10),
             floatingLabelBehavior: FloatingLabelBehavior.never,
             border: InputBorder.none,
             fillColor: Colors.transparent,
