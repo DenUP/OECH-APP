@@ -12,6 +12,20 @@
     Onboarding
   </td>
   
+   </td>
+   <td style="text-align: center">
+    <img width="180" alt="Onboarding" src="readme_img\page_login.png">
+  
+    Page LogIn
+  </td>
+  
+   </td>
+   <td style="text-align: center">
+    <img width="180" alt="Onboarding" src="readme_img\page_home.png">
+  
+    Home page
+  </td>
+  
 
 
 </tr></table></div>
