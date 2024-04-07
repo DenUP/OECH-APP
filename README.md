@@ -18,6 +18,12 @@
   
     Page LogIn
   </td>
+     </td>
+   <td style="text-align: center">
+    <img width="180" alt="Onboarding" src="readme_img\profile_page.png">
+  
+    Profile page
+  </td>
   
    </td>
    <td style="text-align: center">
