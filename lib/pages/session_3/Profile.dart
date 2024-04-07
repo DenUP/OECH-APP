@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:oech/pages/session_3/user_profile.dart';
 
 import '../../widgets/session_3/appbar_widget.dart';
 
@@ -10,7 +11,7 @@ class Profile extends StatefulWidget {
 }
 
 class _ProfileState extends State<Profile> {
-  int _selectedTab = 0;
+  int _selectedTab = 3;
 
   static const List<Widget> _widgetOptions = <Widget>[
     Text(
@@ -22,9 +23,7 @@ class _ProfileState extends State<Profile> {
     Text(
       'Index 2: Track',
     ),
-    Text(
-      'Index 2: Profile',
-    ),
+    UserProfile(),
   ];
 
   void onSelectedTab(int index) {
@@ -37,10 +36,10 @@ class _ProfileState extends State<Profile> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const AppBarDefoult(
-        titleText: 'Profile',
-        button: true,
-      ),
+      // appBar: const AppBarDefoult(
+      //   titleText: 'Profile',
+      //   button: false,
+      // ),
       backgroundColor: Colors.white,
       body: Center(
         child: _widgetOptions[_selectedTab],

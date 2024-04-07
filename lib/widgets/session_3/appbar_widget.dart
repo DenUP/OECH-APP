@@ -16,6 +16,15 @@ class AppBarDefoult extends StatelessWidget implements PreferredSizeWidget {
         color: Color.fromRGBO(5, 96, 250, 1),
       ),
       backgroundColor: Colors.white,
+      shadowColor: Color.fromRGBO(0, 0, 0, 0.15),
+      elevation: 4,
+      // bottom: PreferredSize(
+      //     preferredSize: Size.fromHeight(4.0),
+      //     child: Container(
+      //       color: Colors.orange,
+      //       height: 4,
+      //     )),
+
       // leadingWidth: BorderSide.strokeAlignCenter,
       title: Text(
         titleText,
@@ -30,5 +39,5 @@ class AppBarDefoult extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   // TODO: implement preferredSize
-  Size get preferredSize => const Size.fromHeight(100);
+  Size get preferredSize => const Size.fromHeight(65);
 }
