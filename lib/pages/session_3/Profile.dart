@@ -48,11 +48,13 @@ class _ProfileState extends State<Profile> {
         currentIndex: _selectedTab,
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-          BottomNavigationBarItem(icon: Icon(Icons.wallet), label: 'Wallet'),
           BottomNavigationBarItem(
-              icon: Icon(Icons.track_changes), label: 'Track'),
+              icon: Icon(Icons.account_balance_wallet_outlined),
+              label: 'Wallet'),
           BottomNavigationBarItem(
-              icon: Icon(Icons.verified_user_sharp), label: 'Profile'),
+              icon: Icon(Icons.spatial_tracking_outlined), label: 'Track'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.account_circle_outlined), label: 'Profile'),
         ],
         onTap: onSelectedTab,
       ),
