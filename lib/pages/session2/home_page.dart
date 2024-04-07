@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:oech/pages/session2/data/models/HeaderEmpty.dart';
 import 'package:oech/widgets/session_2/Text_Field_Widget.dart';
 import 'package:oech/widgets/session_2/password_field_widget.dart';
-import 'package:oech/widgets/session_2/s2_field.dart';
 
 class HomePage extends StatefulWidget {
   static const routeName = '/home-page';
@@ -23,6 +22,7 @@ class _HomePageState extends State<HomePage> {
     if (login == 'admin' && password == 'admin') {
       setState(() {
         errorText = null;
+        // _authTextController.selection.isNormalized.runtimeType
       });
       Navigator.pushNamed(context, '/profile');
     } else {
@@ -70,6 +70,7 @@ class _HomePageState extends State<HomePage> {
                       height: 25,
                     ),
                     PasswordInputWioidet(
+                      errorSText: errorText,
                       controller: _passwordTextController,
                       textTitle: 'Password',
                       textColor: const Color.fromRGBO(167, 167, 167, 1),

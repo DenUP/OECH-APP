@@ -9,6 +9,7 @@ class PasswordInputWioidet extends StatefulWidget {
   // final bool is0bstext;
   final TextInputType inputType;
   final TextEditingController controller;
+  final String? errorSText;
 
   const PasswordInputWioidet({
     super.key,
@@ -19,6 +20,7 @@ class PasswordInputWioidet extends StatefulWidget {
     this.inputType = TextInputType.text,
     required this.controller,
     this.textColor = const Color.fromRGBO(167, 167, 167, 1),
+    this.errorSText,
   });
 
   @override
@@ -27,6 +29,24 @@ class PasswordInputWioidet extends StatefulWidget {
 
 class _PasswordInputWioidetState extends State<PasswordInputWioidet> {
   var is0bstext = true;
+
+  var errorText = false;
+
+  // void _onTap() {
+  //   print(' onTap');
+  // }
+
+  // void _onChanged(String text) {
+  //   print('$text OnChanged');
+  // }
+
+  // void _onFieldSubmitted(String text) {
+  //   print('$text onFieldSubmitted');
+  // }
+
+  // void _onEditingComplete() {
+  //   print('EXYYY onEditingComplete');
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -54,6 +74,10 @@ class _PasswordInputWioidetState extends State<PasswordInputWioidet> {
           ),
         ),
         TextFormField(
+          // onTap: _onTap,
+          // onChanged: _onChanged,
+          // onFieldSubmitted: _onFieldSubmitted,
+          // onEditingComplete: _onEditingComplete,
           cursorColor: colors.FieldColors,
           keyboardType: widget.inputType,
           // cursorHeight: 500,
@@ -81,7 +105,7 @@ class _PasswordInputWioidetState extends State<PasswordInputWioidet> {
             focusedBorder: OutlineInputBorder(
                 borderSide: BorderSide(color: widget.textColor, width: 1),
                 borderRadius: BorderRadius.circular(4)),
-            // errorText: 'fdsfds',
+            // errorText: errorSText,
             // focusColor: Colors.red,
             errorStyle: TextStyle(color: colors.RedErorr),
             focusedErrorBorder: OutlineInputBorder(
