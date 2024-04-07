@@ -120,14 +120,19 @@ class _UserProfileState extends State<UserProfile> {
             const SizedBox(
               height: 19,
             ),
-            const Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 24),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 24),
               child: Column(
                 children: [
-                  ListScreenWidget(
-                    text: 'Edit Profile',
-                    subtitle: 'Name, phone no, address, email ...',
-                    icon: Icons.supervised_user_circle_rounded,
+                  InkWell(
+                    onTap: () {
+                      print('fdsd');
+                    },
+                    child: ListScreenWidget(
+                      text: 'Edit Profile',
+                      subtitle: 'Name, phone no, address, email ...',
+                      icon: Icons.supervised_user_circle_rounded,
+                    ),
                   ),
                   ListScreenWidget(
                     text: 'Statements & Reports',
@@ -142,7 +147,7 @@ class _UserProfileState extends State<UserProfile> {
                   ),
                   ListScreenWidget(
                     text: 'Card & Bank account settings',
-                    subtitle: 'change cards, delete card details',
+                    subtitle: 'change cards, delete card detail',
                     icon: Icons.account_balance_wallet_outlined,
                   ),
                   ListScreenWidget(

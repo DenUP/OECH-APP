@@ -20,6 +20,7 @@ class ListScreenWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(bottom: 12),
       child: Container(
+        width: double.infinity,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(0),
             color: Colors.white,
@@ -49,6 +50,8 @@ class ListScreenWidget extends StatelessWidget {
                 children: [
                   Text(
                     text,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
                     style: const TextStyle(
                         color: colors.name_label,
                         fontSize: 16,
@@ -59,6 +62,8 @@ class ListScreenWidget extends StatelessWidget {
                   ),
                   Text(
                     subtitle,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
                     style: const TextStyle(
                         color: colors.FieldColors,
                         fontSize: 12,
