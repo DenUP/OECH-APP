@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/widgets.dart';
 import 'package:oech/presentation/style/colors.dart';
 
 class ListScreenWidget extends StatelessWidget {
@@ -72,7 +70,7 @@ class ListScreenWidget extends StatelessWidget {
                 ],
               ),
               const Spacer(),
-              Icon(
+              const Icon(
                 Icons.arrow_forward_ios_outlined,
                 size: 10,
               ),

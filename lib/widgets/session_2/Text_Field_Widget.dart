@@ -68,7 +68,7 @@ class TextInputWioidet extends StatelessWidget {
                 borderRadius: BorderRadius.circular(4)),
             // errorText: 'fdsfds',
             // focusColor: Colors.red,
-            errorStyle: TextStyle(color: colors.RedErorr),
+            errorStyle: const TextStyle(color: colors.RedErorr),
             focusedErrorBorder: OutlineInputBorder(
                 borderSide: const BorderSide(
                   color: colors.RedErorr,

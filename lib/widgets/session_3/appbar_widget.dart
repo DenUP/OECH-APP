@@ -16,7 +16,7 @@ class AppBarDefoult extends StatelessWidget implements PreferredSizeWidget {
         color: Color.fromRGBO(5, 96, 250, 1),
       ),
       backgroundColor: Colors.white,
-      shadowColor: Color.fromRGBO(0, 0, 0, 0.15),
+      shadowColor: const Color.fromRGBO(0, 0, 0, 0.15),
       elevation: 4,
       // bottom: PreferredSize(
       //     preferredSize: Size.fromHeight(4.0),

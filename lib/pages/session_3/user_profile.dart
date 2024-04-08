@@ -25,7 +25,7 @@ class _UserProfileState extends State<UserProfile> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Padding(
@@ -78,7 +78,7 @@ class _UserProfileState extends State<UserProfile> {
                         }
                         setState(() {});
                       },
-                      child: Container(
+                      child: SizedBox(
                           width: 30,
                           height: 30,
                           child: balance == '10,712:00'
@@ -121,46 +121,55 @@ class _UserProfileState extends State<UserProfile> {
               height: 19,
             ),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 24),
+              padding: const EdgeInsets.symmetric(horizontal: 24),
               child: Column(
                 children: [
                   InkWell(
                     onTap: () {
                       print('fdsd');
                     },
-                    child: ListScreenWidget(
+                    child: const ListScreenWidget(
                       text: 'Edit Profile',
                       subtitle: 'Name, phone no, address, email ...',
                       icon: Icons.supervised_user_circle_rounded,
                     ),
                   ),
-                  ListScreenWidget(
+                  const ListScreenWidget(
                     text: 'Statements & Reports',
                     subtitle:
                         'Download transaction details, orders, deliveries',
                     icon: Icons.receipt_outlined,
                   ),
-                  ListScreenWidget(
-                    text: 'Notification Settings',
-                    subtitle: 'mute, unmute, set location & tracking setting',
-                    icon: Icons.notifications_active_outlined,
+                  InkWell(
+                    onTap: () {
+                      Navigator.of(context).pushNamed('/notif');
+                    },
+                    child: const ListScreenWidget(
+                      text: 'Notification Settings',
+                      subtitle: 'mute, unmute, set location & tracking setting',
+                      icon: Icons.notifications_active_outlined,
+                    ),
                   ),
-                  ListScreenWidget(
+                  const ListScreenWidget(
                     text: 'Card & Bank account settings',
                     subtitle: 'change cards, delete card detail',
                     icon: Icons.account_balance_wallet_outlined,
                   ),
-                  ListScreenWidget(
-                    text: 'Referrals',
-                    subtitle: 'check no of friends and earn',
-                    icon: Icons.rule_folder,
+                  InkWell(
+                    onTap: () => Navigator.of(context).pushNamed('/catalog'),
+                    child: const ListScreenWidget(
+                      text: 'Catalog',
+                      subtitle: 'Product catalog of the latest products',
+                      icon: Icons.production_quantity_limits,
+                      iconColor: Colors.green,
+                    ),
                   ),
-                  ListScreenWidget(
+                  const ListScreenWidget(
                     text: 'About Us',
                     subtitle: 'know more about us, terms and conditions',
                     icon: Icons.image,
                   ),
-                  ListScreenWidget(
+                  const ListScreenWidget(
                     text: 'Log Out',
                     icon: Icons.logout_outlined,
                     iconColor: Colors.red,

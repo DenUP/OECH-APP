@@ -107,7 +107,7 @@ class _PasswordInputWioidetState extends State<PasswordInputWioidet> {
                 borderRadius: BorderRadius.circular(4)),
             // errorText: errorSText,
             // focusColor: Colors.red,
-            errorStyle: TextStyle(color: colors.RedErorr),
+            errorStyle: const TextStyle(color: colors.RedErorr),
             focusedErrorBorder: OutlineInputBorder(
                 borderSide: const BorderSide(
                   color: colors.RedErorr,

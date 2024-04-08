@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:oech/pages/session_3/user_profile.dart';
 
-import '../../widgets/session_3/appbar_widget.dart';
 
 class Profile extends StatefulWidget {
   const Profile({super.key});
