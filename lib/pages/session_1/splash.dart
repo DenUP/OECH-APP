@@ -1,7 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:oech/pages/session2/home_page.dart';
+import 'package:oech/pages/session_1/OnBoard.dart';
+import 'package:oech/pages/session_1/onboarding.dart';
 
 class Splash extends StatefulWidget {
   const Splash({super.key});
@@ -17,8 +18,8 @@ class _SplashState extends State<Splash> {
 
     Timer(
         const Duration(seconds: 1),
-        () => Navigator.of(context).push(
-            MaterialPageRoute(builder: (BuildContext context) => const HomePage())));
+        () => Navigator.of(context).push(MaterialPageRoute(
+            builder: (BuildContext context) => const OnboardingPage())));
   }
 
   @override
